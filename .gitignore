@@ -1,0 +1,21 @@
+#.msx
+.module-cache
+#visual studio code
+# Not Ignored ?
+# .vscode
+
+#React-templates
+# Not RT files
+*.rt.ts
+*.rt.js
+*.rt.jsx 
+
+# Created by .ignore support plugin (hsz.mobi)
+
+
+.tscache
+.idea
+build
+built
+node_modules
+src/main/typescript/.baseDir.ts

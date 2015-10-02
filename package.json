@@ -1,0 +1,21 @@
+{
+  "name": "webrxjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "rx": "^4.0.0",
+    "webrx": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.19.0",
+    "html-loader": "^0.3.0",
+    "style-loader": "^0.12.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
