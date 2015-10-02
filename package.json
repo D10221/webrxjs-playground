@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --watch"
+  },
   "dependencies": {
     "rx": "^4.0.0",
     "webrx": "^1.0.0"
