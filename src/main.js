@@ -2,42 +2,38 @@
 
 import rx from 'rx';
 import wx from "webrx";
-import Service from './service';
+import TaskService from './task-service';
 import MainView from './main-view';
+import MainViewModel from './main-viewmodel';
 
-var service = new Service();
+//var tasks = localStorage.parse("webrx-tasks") || [{}];
 
-class MainViewModel {
+/**
+ * @type IComponent
+ */
+var  MyApp =  {
 
-    tasks = wx.property([{}]);
+    /**
+     * @type MainViewModel
+     */
+    viewModel:MainViewModel,
 
-    title = "Tasks";
-
-    constructor() {
-        service
-            .getData('../webrxjs/data/tasks.json')
-            .then(data=> {
-                this.tasks(data);
-               // console.log(JSON.stringify(data));
-            })
-            .catch(e=> {
-                throw e;
-            });
-    }
+    template:new MainView().template
 }
 
-
-
-wx.app.component(
-    'hello', {
-        viewModel: MainViewModel,
-        template: new MainView().template
-    });
+wx.app.component('myApp', MyApp);
 
 wx.router.state({
     name: "$",
-    views: {'main': "hello"}
+    views: {
+        'main': "myApp",
+        'root': "myApp",
+        '/': 'myApp'
+    }
 });
+
+
+wx.injector.register('taskService', [TaskService]);
 
 wx.router.reload();
 

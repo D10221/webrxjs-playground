@@ -1,7 +1,7 @@
 
 import rx from 'rx';
 
-export default class Service {
+export default class TaskService {
 
     _tasks = [];
 
